@@ -3,26 +3,66 @@ HOST: http://127.0.0.1:8000/api/
 
 # play with lumen
 
-This API Docs purpose for learning
+This API Docs purpose for learning creating API with Lumen Framework
 
 ## Notes Collection [/notes]
+
+For get notes collection and add new note
 
 ### List All Notes [GET]
 
 + Response 200 (application/json)
 
         {
-            "totalData" : 2,
-            "data" : [
+            "totalData": 2,
+            "data": [
                 {
-                    "id" : 1,
-                    "title" : "First Notes",
-                    "content" : "This is first notes"
+                    "id": 1,
+                    "title": "First Notes",
+                    "content": "This is first notes"
                 },
                 {
-                    "id" : 2,
-                    "title" : "Second Notes",
-                    "content" : "This is second notes"
+                    "id": 2,
+                    "title": "Second Notes",
+                    "content": "This is second notes"
                 }
             ]
+        }
+
+### Add New Note [POST]
+
++ Request (application/json)
+
+        {
+            "title": "New Notes",
+            "content": "This is some notes"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "message": "success",
+            "data": {
+                "title": "New Notes",
+                "published_at": "2014-11-11T08:40:51.620Z"
+            }
+        }
+
+## Single Note [/notes/{note_id}]
+
+For fetch single note item
+
++ Parameters
+    + note_id:1 (number) - ID of the note to fetch
+
+### Fetch Single Note [GET]
+
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "id": 1,
+                "title": "First Notes",
+                "content": "This is first notes"
+            }
         }
