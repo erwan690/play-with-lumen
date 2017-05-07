@@ -1,0 +1,28 @@
+FORMAT: 1A
+HOST: http://127.0.0.1:8000/api/
+
+# play with lumen
+
+This API Docs purpose for learning
+
+## Notes Collection [/notes]
+
+### List All Notes [GET]
+
++ Response 200 (application/json)
+
+        {
+            "totalData" : 2,
+            "data" : [
+                {
+                    "id" : 1,
+                    "title" : "First Notes",
+                    "content" : "This is first notes"
+                },
+                {
+                    "id" : 2,
+                    "title" : "Second Notes",
+                    "content" : "This is second notes"
+                }
+            ]
+        }
